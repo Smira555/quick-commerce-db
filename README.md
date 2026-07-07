@@ -1,4 +1,4 @@
-# Quick Commerce Database (quick-commerce-db)
+# Quick Commerce Database 
 
 [![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
 [![SQL](https://img.shields.io/badge/Language-SQL-orange.svg?style=flat-square)](https://en.wikipedia.org/wiki/SQL)
@@ -8,7 +8,7 @@ A high-performance database schema and optimization guide designed to model, ing
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 1. [Overview](#-overview)
 2. [Database Schema & ERD](#-database-schema--erd)
 3. [Setup & Data Ingestion](#-setup--data-ingestion)
@@ -18,7 +18,7 @@ A high-performance database schema and optimization guide designed to model, ing
 
 ---
 
-## 🔍 Overview
+## Overview
 
 Quick Commerce (Q-Commerce) systems generate massive transaction volumes. When databases scale to tens of millions of rows, unoptimized queries can lock resources and result in slow page loads or app latency.
 
@@ -30,7 +30,7 @@ This project focuses on:
 
 ---
 
-## 📊 Database Schema & ERD
+## Database Schema & ERD
 
 The database represents a classic star-like schema bridging orders and products via an order line-item bridge table:
 
@@ -69,7 +69,7 @@ erDiagram
 
 ---
 
-## ⚡ Setup & Data Ingestion
+## Setup & Data Ingestion
 
 ### Prerequisites
 * **PostgreSQL 12+** installed and running.
@@ -98,7 +98,7 @@ psql -U your_username -d quick_commerce -f schema.sql
 
 ---
 
-## 📈 Performance Analysis & Query Tuning
+## Performance Analysis & Query Tuning
 
 ### The Challenge
 We want to retrieve the order details and product names for a specific user (`user_id = 4567`):
@@ -139,7 +139,7 @@ CREATE INDEX idx_order_items_product_id ON order_items(product_id);
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 quick-commerce-db/
@@ -154,7 +154,7 @@ quick-commerce-db/
 
 ---
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 To build on top of this repository, consider implementing:
 1. **Normalized Lookup Tables**: Create explicit tables for `aisles` and `departments`, loading them from the CSVs in the `data/` directory, and link them with Foreign Keys to `products`.
